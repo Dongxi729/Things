@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf8">
+            <script language="javascript">
+                
+                //JS执行window.webkit.messageHandlers.Share.postMessage(<messageBody>)
+                function shareClick() {
+                    window.webkit.messageHandlers.setAlias.postMessage({content:'测试分享的内容'});
+                }
+            
+            
+            //JS执行window.webkit.messageHandlers.Camera.postMessage(<messageBody>)
+            function payClick() {
+                window.webkit.messageHandlers.setAlias.postMessage({eName:'大盘鸡',ePrice:'999'});
+            }
+            
+            function logout() {
+                window.webkit.messageHandlers.setAlias.postMessage(null);
+            }
+            
+                </script>
+            </head>
+    
+    <body>
+        <h1>这是按钮调用</h1>
+        <input type="button" value="分享" onclick="shareClick()" />
+        <input type="button" value="支付" onclick="payClick()" />
+        <input type="button" value="退出登录" onclick="logout()" />
+    </body>
+</html>
